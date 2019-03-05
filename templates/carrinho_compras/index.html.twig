@@ -15,24 +15,39 @@
                     <th scope="col">Preço</th>
                     <th scope="col">Qtd.</th>
                     <th scope="col">Sub Total</th>
+                    <th class="text-center">Remover</th>
                 </tr>
             </thead>
             <tbody>
+                {% for key , Produto in Produtos %}
+                {{dump(key)}}
                 <tr>
                     <td scope="row">
-                        <img style="width: 60px;" src="https://staticmobly.akamaized.net/p/Mobly-Rack-RetrC3B4-Weimar-Preto-162-cm-4287-020834-1-zoom.jpg" class="rounded mx-auto">
-                         - nome do produto
+                        <img style="width: 60px;" src="{{Produto.Item.imagem}}" class="rounded mx-auto">
+                         - {{Produto.Item.nome}}
                     
                     </td>
-                    <td>R$ 12.00</td>
+                    <td>R$ {{ Produto.Item.preco|number_format(2, '.', ',') }}</td>
                     <td>
-                        <a href="">-</a> 2  <a href="">+</a>
+                        <a href="{{ path('removeQtd_carrinho',{'id':Produto.Item.id})}}" >-</a>  
+                            {{Produto.qtd}}  
+                        <a href="{{ path('add_carrinho',{'id':Produto.Item.id})}}">+</a>
                     </td>
-                    <td>R$ 24.00</td>
+                        {% set subtotal = Produto.qtd * Produto.Item.preco %}
+                    <td>R$ {{ subtotal|number_format(2, '.', ',') }}</td>
+
+                    <td class="text-center">
+                        <a href="{{ path('remove_carrinho',{'id':key})}}">
+                            <span class="badge badge-danger"><i class="fas fa-trash-alt"></i></span>
+                        </a>
+                    </td>
                 </tr>
+
+                {% endfor %}
                 <tr>
-                    <th class="text-right" colspan="4">Total: R$ 200.00</th>
+                    <th class="text-right" colspan="4">Total: R$ {{ Total|number_format(2, '.', ',') }}</th>
                 </tr>
+                
                
             </tbody>
         </table>
