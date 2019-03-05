@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Meu Carrinho {% endblock %}
+
+{% block body %}
+<div class="album py-5 bg-light">
+   <main role="main" class="container">
+
+        <h1>Meu Carrinho  <i class="fas fa-shopping-cart"></i></h1>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Qtd.</th>
+                    <th scope="col">Sub Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row">
+                        <img style="width: 60px;" src="https://staticmobly.akamaized.net/p/Mobly-Rack-RetrC3B4-Weimar-Preto-162-cm-4287-020834-1-zoom.jpg" class="rounded mx-auto">
+                         - nome do produto
+                    
+                    </td>
+                    <td>R$ 12.00</td>
+                    <td>
+                        <a href="">-</a> 2  <a href="">+</a>
+                    </td>
+                    <td>R$ 24.00</td>
+                </tr>
+                <tr>
+                    <th class="text-right" colspan="4">Total: R$ 200.00</th>
+                </tr>
+               
+            </tbody>
+        </table>
+        <div class="text-center">
+            <a  href="{{ path('HomeLoja')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Continuar Comprando</a>
+            <a href="#" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Finalizar Compra</a>
+    </div> 
+    </main>
+</div>       
+{% endblock %}

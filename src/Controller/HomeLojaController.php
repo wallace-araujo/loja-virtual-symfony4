@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class HomeLojaController extends AbstractController
 {
     /**
-     * @Route("/", name="home_loja")
+     * @Route("/", name="HomeLoja")
      * @Template("home_loja/index.html.twig")
      */
     public function index()
@@ -25,9 +25,17 @@ class HomeLojaController extends AbstractController
     }
 
 
-
-    public function DetalheProduto(TbProdutos $Produtos)
+    /**
+     * @Route("/produto/{id}", name="Detalhes_Produto")
+     * @Template("View/_view_html.twig")
+     */
+    public function DetalheProduto(TbProdutos $Produto)
     {
+        // dump($Produto);
+        // exit;
+        return [
+            'Produto' => $Produto,
+        ];
 
     }
 
