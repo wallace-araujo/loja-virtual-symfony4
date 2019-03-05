@@ -48,8 +48,8 @@ class TbProdutos
     private $categorias;
 
     /**
-    * coment: id que vincula oproduto para sua caracteristica especifica.
-    * @ORM\Column(type="integer")
+    * coment: relacionamento 
+    * @ORM\ManyToOne(targetEntity="App\Entity\TbCaracteristicas", inversedBy="id" )
     */
     private $Caracteristicas;
 
