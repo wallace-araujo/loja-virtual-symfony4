@@ -41,8 +41,9 @@ class TbProdutos
     private $descricao;
 
     /**
-    * coment: id da categoria que vinculo o produto para  uma ou mais categoria.
-    * @ORM\Column(type="integer")
+    * coment: elacionamento muitos para muitos
+    * @ORM\ManyToMany(targetEntity="App\Entity\TbCategorias", inversedBy="produtos" )
+    * @ORM\JoinTable("categoria_produtos")
     */    
     private $categorias;
 

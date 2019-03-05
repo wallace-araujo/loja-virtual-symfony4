@@ -29,8 +29,8 @@ class TbCategorias
     private $descricao;
 
     /**
-    * coment: relacionamento um para muitos
-    * @ORM\ManyToOne(targetEntity="App\Entity\TbProdutos", inversedBy="categorias" )
+    * coment: relacionamento muitos para muitos
+    * @ORM\ManyToMany(targetEntity="App\Entity\TbProdutos", mappedBy="categorias" )
     */
     private $produtos;
 
@@ -78,5 +78,18 @@ class TbCategorias
         $this->datecreate = $datecreate;
         return $this;
     }
-    //END--------------------------    
+    //END-------------------------- 
+    //START--------------------------
+    public function getprodutos()
+    {
+        return $this->produtos;
+    }
+    public function setprodutos($produtos)
+    {
+        $this->produtos = $produtos;
+        return $this;
+    }
+    //END--------------------------     
+    
+
 }
