@@ -11,7 +11,8 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-    {% include "_menu.html.twig" %} 
+    {{ render(controller('App\\Controller\\HomeLojaController::ViewMenu' )) }}
+    {# {% include "_menu.html.twig" %}  #}
     {% block body %}{% endblock %}
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

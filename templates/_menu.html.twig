@@ -5,9 +5,6 @@
       <span class="navbar-toggler-icon"></span>
     </button>
  <div class="collapse navbar-collapse " id="navbarSupportedContent">
-     
-     
-     
       <ul class="navbar-nav my-2 my-sm-0">
 
 
@@ -17,11 +14,13 @@
             Categorias
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">01</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">02</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">03</a>
+              <a class="dropdown-item" href="{{path('HomeLoja')}}">Todas</a>
+              <div class="dropdown-divider"></div>
+            {% for Categoria in Categorias %}
+              <a class="dropdown-item" href="{{path('View_categoria',{'name':Categoria.nomeCategoria,'id':Categoria.id})}}">{{Categoria.nomeCategoria}}</a>
+              <div class="dropdown-divider"></div>
+            {% endfor %}
+
           </div>
         </li>
       </ul>

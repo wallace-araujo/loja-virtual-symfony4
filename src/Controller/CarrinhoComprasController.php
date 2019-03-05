@@ -61,8 +61,7 @@ class CarrinhoComprasController extends AbstractController
         $session->set('Carrinho', $this->items);
         //dump($this->items);
         // exit;
-
-        //$this->addFlash('success', "Fonte de Dados '".$request->request->get('datasetname')."' foi Criada com Sucesso! ");
+        
         return $this->redirectToRoute('carrinho_compras');
     }
 
