@@ -31,7 +31,6 @@ class CarrinhoComprasController extends AbstractController
     {
         $Produtos = $session->get('Carrinho', []);
         dump($Produtos);
-        dump($this->totalCarrinho());
         dump($this->totalItems());
 
         return [

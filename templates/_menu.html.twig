@@ -37,7 +37,12 @@
           <a class="nav-link" href="{{ path('carrinho_compras')}}">
             Carrinho 
             <i class="fas fa-shopping-cart"></i>
-            <span class="badge badge-success">9</span>
+            <span class="badge badge-success">
+
+              {% if app.session.has('Carrinho') %}
+                {{ app.session.get('Carrinho')|length }}
+              {% else %} 0 {% endif %}
+            </span>
           </a>
         </li>
         <li class="nav-item dropdown">
