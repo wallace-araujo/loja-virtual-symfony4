@@ -40,6 +40,12 @@ class User implements UserInterface
      */
     private $password;
 
+    /**
+    * coment: relacionamento 
+    * @ORM\ManyToOne(targetEntity="App\Entity\TbEndereco", inversedBy="id" )
+    */    
+    private $endereco;
+
 
     public function getId(): ?int
     {
@@ -114,6 +120,21 @@ class User implements UserInterface
 
         return $this;
     }
+
+
+    public function getEndereco(): ?string
+    {
+        return $this->endereco;
+    }
+
+    public function setEndereco(string $endereco): self
+    {
+        $this->endereco = $endereco;
+
+        return $this;
+    }
+
+
 
     /**
      * @see UserInterface

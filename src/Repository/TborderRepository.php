@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\TbPedidos;
+use App\Entity\Tborder;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method TbPedidos|null find($id, $lockMode = null, $lockVersion = null)
- * @method TbPedidos|null findOneBy(array $criteria, array $orderBy = null)
- * @method TbPedidos[]    findAll()
- * @method TbPedidos[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Tborder|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Tborder|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Tborder[]    findAll()
+ * @method Tborder[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class TbPedidosRepository extends ServiceEntityRepository
+class TborderRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, TbPedidos::class);
+        parent::__construct($registry, Tborder::class);
     }
 
     // /**
-    //  * @return TbPedidos[] Returns an array of TbPedidos objects
+    //  * @return Tborder[] Returns an array of Tborder objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class TbPedidosRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?TbPedidos
+    public function findOneBySomeField($value): ?Tborder
     {
         return $this->createQueryBuilder('t')
             ->andWhere('t.exampleField = :val')
