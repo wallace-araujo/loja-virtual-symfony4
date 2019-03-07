@@ -30,8 +30,8 @@ class CarrinhoComprasController extends AbstractController
     public function index(SessionInterface $session)
     {
         $Produtos = $session->get('Carrinho', []);
-        dump($Produtos);
-        dump($this->totalItems());
+        // dump($Produtos);
+        // dump($this->totalItems());
 
         return [
             'Produtos' => $Produtos,

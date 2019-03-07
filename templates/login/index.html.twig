@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block stylesheets %}
+
+    <style>
+        .form-signin {
+        width: 100%;
+        max-width: 330px;
+        padding: 15px;
+        margin: auto;
+        }
+        .form-signin .checkbox {
+        font-weight: 400;
+        }
+        .form-signin .form-control {
+        position: relative;
+        box-sizing: border-box;
+        height: auto;
+        padding: 10px;
+        font-size: 16px;
+        }
+        .form-signin .form-control:focus {
+        z-index: 2;
+        }
+        .form-signin input[type="email"] {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        }
+        .form-signin input[type="password"] {
+        margin-bottom: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="album py-5 bg-light">
+    <form  action="{{ path('login') }}" method="POST" class="form-signin">
+        <div class="text-center">
+            <img class="mb-4" src="https://centricityusers.com/wp-content/uploads/icons/FORUM-ICON-USER.png" alt="" width="102" >
+
+            {% if error %}
+                <div class="alert alert-danger">
+                    {% if error.messageKey == 'Account is disabled.' %}
+                        {{'Usuario Desabilitado'}}
+                    {% elseif error.messageKey ==  'Invalid credentials.'%}
+                        {{'Usuario ou Senha Inválido'}}
+                    {% else %}
+                        {{ error.messageKey|trans(error.messageData, 'security') }}
+                    {% endif %}    
+                </div>
+            {% endif %}
+        </div>
+        <h1 class="h3 mb-3 font-weight-normal">Fazer Login</h1>
+
+        <label for="inputEmail" class="sr-only">E-mail</label>
+        <input  name="_username" type="email" id="inputEmail" class="form-control" placeholder="E-mail" required autofocus>
+        <label  for="inputPassword" class="sr-only">Senha</label>
+        <input  name="_password" type="password" id="inputPassword" class="form-control" placeholder="senha" required>
+        
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    </form>
+</div>
+
+{% endblock %}
