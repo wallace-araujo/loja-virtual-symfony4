@@ -5,7 +5,7 @@ Projeto Demo..
 
 Siga os  passos a seguir para rodar o projeto demo
 
-1 -  git clone https://github.com/wallace-araujo/Loja-Virtual-Com-Symfony4.git
+1 -  git clone https://github.com/wallace-araujo/loja-virtual-symfony4.git
 
 2 - cd Loja-Virtual-Com-Symfony4
 
